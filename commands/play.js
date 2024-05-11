@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args) => {
 
         if (voiceChannel != null) { 
 
-            message.channel.send(strings.startedPlaying.replace("SONG_TITLE", song.title).replace("url", song.url));
+            message.channel.send(strings.startedPlaying.replace("SONG_TITLE", song.title));
             
             const connection = utils.joinVChannel(voiceChannel);
 
@@ -72,7 +72,7 @@ module.exports.run = async (client, message, args) => {
         serverQueue.songs.push(song);
         utils.log(`Added music to the queue : ${song.title}`)
 
-        return message.channel.send(strings.songAddedToQueue.replace("SONG_TITLE", song.title).replace("url", song.url));
+        return message.channel.send(strings.songAddedToQueue.replace("SONG_TITLE", song.title));
     };
 
 };
